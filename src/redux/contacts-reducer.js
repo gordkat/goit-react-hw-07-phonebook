@@ -42,6 +42,9 @@ export const error = createReducer(null, {
     alert(payload.message);
     return payload.message;
   },
+  [fetchContactsSuccess]: () => null,
+  [addContactSuccess]: () => null,
+  [deleteContactSuccess]: () => null,
 });
 
 export const filter = createReducer('', {

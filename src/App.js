@@ -1,5 +1,7 @@
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import Loader from 'react-loader-spinner';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
@@ -17,7 +19,16 @@ class App extends Component {
         <ContactForm />
         <h2>Contacts</h2>
         <Filter />
-        {this.props.isLoadingContacts && <h3>Loading ...</h3>}
+        {this.props.isLoadingContacts && (
+          <Loader
+            type="Circles"
+            color="#b2ee8e"
+            height={50}
+            width={50}
+            timeout={3000}
+            className="Loader"
+          />
+        )}
         <ContactList />
       </div>
     );
